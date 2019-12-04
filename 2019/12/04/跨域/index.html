@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="一.同源策略 1.什么是源？ 源 &#x3D; 协议+域名+端口号，可以通过window.origin或者location.origin获取到。 2.如果两个url的协议、域名和端口都是一样的，那么这两个url就是同源的。例如http:&#x2F;&#x2F;qq.com:8080和http:&#x2F;&#x2F;qq.com:8081这两个源是不同的，因为端口号不同。  浏览器为了保护隐私,规定：如果一个JS文件运行在源A里面，那么就只能获取">
+<meta name="description" content="一.同源策略 1.什么是源？ 源 &#x3D; 协议+域名+端口号，可以通过window.origin或者location.origin获取到。 2.如果两个url的协议、域名和端口都是一样的，那么这两个url就是同源的。例如 http:&#x2F;&#x2F;qq.com:8080 和 http:&#x2F;&#x2F;qq.com:8081 这两个源是不同的，因为端口号不同。  浏览器为了保护隐私,规定：如果一个JS文件运行在源A里面，那么就">
 <meta name="keywords" content="JSONP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跨域">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;%E8%B7%A8%E5%9F%9F&#x2F;index.html">
 <meta property="og:site_name" content="October&#39;s Blog">
-<meta property="og:description" content="一.同源策略 1.什么是源？ 源 &#x3D; 协议+域名+端口号，可以通过window.origin或者location.origin获取到。 2.如果两个url的协议、域名和端口都是一样的，那么这两个url就是同源的。例如http:&#x2F;&#x2F;qq.com:8080和http:&#x2F;&#x2F;qq.com:8081这两个源是不同的，因为端口号不同。  浏览器为了保护隐私,规定：如果一个JS文件运行在源A里面，那么就只能获取">
+<meta property="og:description" content="一.同源策略 1.什么是源？ 源 &#x3D; 协议+域名+端口号，可以通过window.origin或者location.origin获取到。 2.如果两个url的协议、域名和端口都是一样的，那么这两个url就是同源的。例如 http:&#x2F;&#x2F;qq.com:8080 和 http:&#x2F;&#x2F;qq.com:8081 这两个源是不同的，因为端口号不同。  浏览器为了保护隐私,规定：如果一个JS文件运行在源A里面，那么就">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-04T01:46:57.672Z">
+<meta property="og:updated_time" content="2019-12-04T11:17:45.631Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -342,10 +342,10 @@
       
         <h1 id="一-同源策略"><a href="#一-同源策略" class="headerlink" title="一.同源策略"></a>一.同源策略</h1><ul>
 <li>1.什么是源？ 源 = 协议+域名+端口号，可以通过window.origin或者location.origin获取到。</li>
-<li>2.如果两个url的协议、域名和端口都是一样的，那么这两个url就是同源的。例如<a href="http://qq.com:8080和http://qq.com:8081这两个源是不同的，因为端口号不同。" target="_blank" rel="noopener">http://qq.com:8080和http://qq.com:8081这两个源是不同的，因为端口号不同。</a></li>
+<li>2.如果两个url的协议、域名和端口都是一样的，那么这两个url就是同源的。例如 <a href="http://qq.com:8080" target="_blank" rel="noopener">http://qq.com:8080</a> 和 <a href="http://qq.com:8081" target="_blank" rel="noopener">http://qq.com:8081</a> 这两个源是不同的，因为端口号不同。</li>
 </ul>
-<h2 id="浏览器为了保护隐私-规定："><a href="#浏览器为了保护隐私-规定：" class="headerlink" title="浏览器为了保护隐私,规定："></a>浏览器为了保护隐私,规定：</h2><p>如果一个JS文件运行在源A里面，那么就只能获取源A的数据，不能获取源B的数据，即不允许跨域。例如<a href="http://jack.com/index.html引用了http://lb.com/server.js,那么就说server.js运行在源http://jack.com里面，这里省略了端口号。" target="_blank" rel="noopener">http://jack.com/index.html引用了http://lb.com/server.js,那么就说server.js运行在源http://jack.com里面，这里省略了端口号。</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">也就是说server.js只能获取http:&#x2F;&#x2F;jack.com的数据，不能获取http:&#x2F;&#x2F;lb.com的数据。</span></pre></td></tr></table></figure>
+<h2 id="浏览器为了保护隐私-规定："><a href="#浏览器为了保护隐私-规定：" class="headerlink" title="浏览器为了保护隐私,规定："></a>浏览器为了保护隐私,规定：</h2><p>如果一个JS文件运行在源A里面，那么就只能获取源A的数据，不能获取源B的数据，即不允许跨域。例如 <a href="http://jack.com/index.html" target="_blank" rel="noopener">http://jack.com/index.html</a> 引用了 <a href="http://lb.com/server.js" target="_blank" rel="noopener">http://lb.com/server.js</a> ,那么就说server.js运行在源<a href="http://jack.com" target="_blank" rel="noopener">http://jack.com</a> 里面，这里省略了端口号。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">也就是说server.js只能获取 http:&#x2F;&#x2F;jack.com 的数据，不能获取 http:&#x2F;&#x2F;lb.com 的数据。</span></pre></td></tr></table></figure>
 
 <p>总之，不同源的页面之间，不准相互访问数据。我们可以做一个实验来验证一下:<br>详情请看GitHub：<a href="https://github.com/Luobinf/CORS" target="_blank" rel="noopener">https://github.com/Luobinf/CORS</a></p>
 <p>浏览器限制了不同源的页面之间，不准相互访问数据。那有时候我们就是需要跨域相互访问数据怎么办?<br>可以使用CORS或者JSONP来进行跨域的数据访问。</p>
