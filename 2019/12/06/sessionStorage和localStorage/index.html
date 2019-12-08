@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JSONP," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="一.同源策略 1.什么是源？ 源 &#x3D; 协议+域名+端口号，可以通过window.origin或者location.origin获取到。 2.如果两个url的协议、域名和端口都是一样的，那么这两个url就是同源的。例如 http:&#x2F;&#x2F;qq.com:8080 和 http:&#x2F;&#x2F;qq.com:8081 这两个源是不同的，因为端口号不同。  浏览器为了保护隐私,规定：如果一个JS文件运行在源A里面，那么就">
-<meta name="keywords" content="JSONP">
+<meta name="description" content="localStorage和sessionStorage都是html5的Web API。 sessionStoragesessionStorage 属性允许你访问一个 session Storage 对象。它与 localStorage 相似，不同之处在于 localStorage 里面存储的数据没有过期时间设置，而存储在 sessionStorage 里面的数据在页面会话结束时会被清除。页面会话在">
+<meta name="keywords" content="October,前端,HTTP,数据结构与算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;%E8%B7%A8%E5%9F%9F&#x2F;index.html">
+<meta property="og:title" content="sessionStorage和localStorage">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;06&#x2F;sessionStorage%E5%92%8ClocalStorage&#x2F;index.html">
 <meta property="og:site_name" content="October&#39;s Blog">
-<meta property="og:description" content="一.同源策略 1.什么是源？ 源 &#x3D; 协议+域名+端口号，可以通过window.origin或者location.origin获取到。 2.如果两个url的协议、域名和端口都是一样的，那么这两个url就是同源的。例如 http:&#x2F;&#x2F;qq.com:8080 和 http:&#x2F;&#x2F;qq.com:8081 这两个源是不同的，因为端口号不同。  浏览器为了保护隐私,规定：如果一个JS文件运行在源A里面，那么就">
+<meta property="og:description" content="localStorage和sessionStorage都是html5的Web API。 sessionStoragesessionStorage 属性允许你访问一个 session Storage 对象。它与 localStorage 相似，不同之处在于 localStorage 里面存储的数据没有过期时间设置，而存储在 sessionStorage 里面的数据在页面会话结束时会被清除。页面会话在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-04T11:17:45.631Z">
+<meta property="og:updated_time" content="2019-12-06T01:34:32.275Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/04/跨域/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/06/sessionStorage和localStorage/"/>
 
 
 
 
 
-  <title>跨域 | October's Blog</title>
+  <title>sessionStorage和localStorage | October's Blog</title>
   
 
 
@@ -251,7 +251,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/%E8%B7%A8%E5%9F%9F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/06/sessionStorage%E5%92%8ClocalStorage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="October">
@@ -268,7 +268,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">跨域</h1>
+          <h1 class="post-title" itemprop="name headline">sessionStorage和localStorage</h1>
         
 
         <div class="post-meta">
@@ -280,8 +280,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T09:39:50+08:00">
-                2019-12-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-06T09:29:22+08:00">
+                2019-12-06
               </time>
             
 
@@ -290,28 +290,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -340,24 +318,36 @@
       
 
       
-        <h1 id="一-同源策略"><a href="#一-同源策略" class="headerlink" title="一.同源策略"></a>一.同源策略</h1><ul>
-<li>1.什么是源？ 源 = 协议+域名+端口号，可以通过window.origin或者location.origin获取到。</li>
-<li>2.如果两个url的协议、域名和端口都是一样的，那么这两个url就是同源的。例如 <a href="http://qq.com:8080" target="_blank" rel="noopener">http://qq.com:8080</a> 和 <a href="http://qq.com:8081" target="_blank" rel="noopener">http://qq.com:8081</a> 这两个源是不同的，因为端口号不同。</li>
+        <p>localStorage和sessionStorage都是html5的Web API。</p>
+<h2 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h2><p>sessionStorage 属性允许你访问一个 session Storage 对象。它与 localStorage 相似，不同之处在于 localStorage 里面存储的数据没有过期时间设置，而存储在 sessionStorage 里面的数据在页面会话结束时会被清除。页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。在新标签或窗口打开一个页面时会在顶级浏览上下文中初始化一个新的会话，这点和 session cookies 的运行方式不同。</p>
+<h2 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h2><p>只读的localStorage 属性允许你访问一个Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。localStorage 类似 sessionStorage，但其区别在于：存储在 localStorage 的数据可以长期保留；而当页面会话结束——也就是说，当页面被关闭时，存储在 sessionStorage 的数据会被清除 。</p>
+<p>另外，localStorage 中的键值对总是以字符串的形式存储。 (需要注意, 和js对象相比, 键值对总是以字符串的形式存储意味着数值类型会自动转化为字符串类型).</p>
+<h2 id="一-两者的共同点"><a href="#一-两者的共同点" class="headerlink" title="一 两者的共同点"></a>一 两者的共同点</h2><ol>
+<li>存储大小约为5M左右</li>
+<li>都有同源策略限制</li>
+<li>仅在客户端中保存，不参与和服务器的通信</li>
+</ol>
+<h2 id="二-两者的不同点"><a href="#二-两者的不同点" class="headerlink" title="二 两者的不同点"></a>二 两者的不同点</h2><ol>
+<li><p>生命周期 —— 数据可以存储多少时间</p>
+<ul>
+<li>localStorage: 存储的数据是永久性的，除非用户人为删除否则会一直存在。</li>
+<li>sessionStorage: 与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被关闭，那么所有通过 sessionStorage 存储的数据也会被删除。</li>
 </ul>
-<h2 id="浏览器为了保护隐私-规定："><a href="#浏览器为了保护隐私-规定：" class="headerlink" title="浏览器为了保护隐私,规定："></a>浏览器为了保护隐私,规定：</h2><p>如果一个JS文件运行在源A里面，那么就只能获取源A的数据，不能获取源B的数据，即不允许跨域。例如 <a href="http://jack.com/index.html" target="_blank" rel="noopener">http://jack.com/index.html</a> 引用了 <a href="http://lb.com/server.js" target="_blank" rel="noopener">http://lb.com/server.js</a> ,那么就说server.js运行在源<a href="http://jack.com" target="_blank" rel="noopener">http://jack.com</a> 里面，这里省略了端口号。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">也就是说server.js只能获取 http:&#x2F;&#x2F;jack.com 的数据，不能获取 http:&#x2F;&#x2F;lb.com 的数据。</span></pre></td></tr></table></figure>
+</li>
+<li><p>作用域 —— 谁拥有数据的访问权</p>
+<ul>
+<li>localStorage: 在同一个浏览器内，同源文档之间共享 localStorage 数据，可以互相读取、覆盖。</li>
+<li>sessionStorage: 与 localStorage 一样需要同一浏览器同源文档这一条件。不仅如此，sessionStorage 的作用域还被限定在了同一个页面会话中，也就是说，只有同一浏览器、同一页面会话中的的同源文档才能读取、覆盖数据。</li>
+</ul>
+</li>
+</ol>
+<p>为了更好的理解sessionStorage,我们来看个例子： 创建两个html文件，分别为a.html、b.html。</p>
+<p>a.html文件中写下列内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;ie&#x3D;edge&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;sessionStorage&lt;&#x2F;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &lt;script&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        window.sessionStorage.setItem(&#39;title&#39;,&#39;今日头条&#39;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">		window.localStorage.setItem(&#39;address&#39;,&#39;china&#39;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        console.log(sessionStorage.getItem(&#39;title&#39;))   &#x2F;&#x2F; 今日头条</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">		console.log(localStorage.getItem(&#39;address&#39;))  &#x2F;&#x2F; china</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    &lt;&#x2F;script&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;html&gt;</span></pre></td></tr></table></figure>
+<p>b.html文件中写下列内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;ie&#x3D;edge&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;localStorage and localStorage&lt;&#x2F;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &lt;script&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    console.log(sessionStorage.getItem(&#39;title&#39;))  &#x2F;&#x2F; null</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	console.log(localStorage.getItem(&#39;address&#39;))  &#x2F;&#x2F; china</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    &lt;&#x2F;script&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;html&gt;</span></pre></td></tr></table></figure>
 
-<p>总之，不同源的页面之间，不准相互访问数据。我们可以做一个实验来验证一下:<br>详情请看GitHub：<a href="https://github.com/Luobinf/CORS" target="_blank" rel="noopener">https://github.com/Luobinf/CORS</a></p>
-<p>浏览器限制了不同源的页面之间，不准相互访问数据。那有时候我们就是需要跨域相互访问数据怎么办?<br>可以使用CORS或者JSONP来进行跨域的数据访问。</p>
-<h1 id="二-CORS"><a href="#二-CORS" class="headerlink" title="二.CORS"></a>二.CORS</h1><p>问题的根源是浏览器不允许不同源之间不能相互访问数据，但是有时候两个兄弟网站之间就是需要相互访问数据，那怎么办?可以使用CORS来突破浏览器的同源限制。</p>
-<p>什么是CORS?CORS的全称是Cross-origin resource sharing，是跨域资源共享的意思。它使用额外的HTTP头来告诉浏览器让运行在一个 origin (domain) 上的Web应用被准许访问来自不同源服务器上的指定的资源。</p>
-<p>如何使用？只要在访问的那一端的响应头中写上你所允许的那个源访问就可以了，例如:Access-Control-Allow-Origin：<a href="http://jack.com。具体例子请看GitHub：https://github.com/Luobinf/CORS" target="_blank" rel="noopener">http://jack.com。具体例子请看GitHub：https://github.com/Luobinf/CORS</a></p>
-<p>由于IE6、7、8、9不支持CORS，但是我也需要跨域怎么办?可以使用JSONP。</p>
-<h1 id="三-JSONP"><a href="#三-JSONP" class="headerlink" title="三.JSONP"></a>三.JSONP</h1><p>什么是JSONP?</p>
-<p>JSONP就是请求方动态的创建script标签，并且将该script的src指向需要获取数据的那一方，服务器再以函数调用的形式将需要获取的数据包裹进去，可以是JSON格式的数据或者xml格式等其它格式的数据。最后通过回调的方式，请求方获取到数据。</p>
-<p>JSONP的优缺点?</p>
-<p>JSONP可以兼容IE，进行跨域访问数据。由于JSONP是使用了script标签来进行访问的，故只支持get请求，不支持post请求，且无法向AJAX那样获得精确的状态码，只知道成功或失败。</p>
-<p>具体例子看GitHub：<a href="https://github.com/Luobinf/CORS" target="_blank" rel="noopener">https://github.com/Luobinf/CORS</a></p>
+<p>可以看到 sessionStorage 中存储的数据只在b.html文件中才可以读取，a.html 文件中无法读取，即 sessionStorage 只在a.html建立的会话中有效；而 localStorage 中存储的数据在 a.html 和 b.html中都可以获取到。</p>
 
       
     </div>
@@ -373,12 +363,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JSONP/" rel="tag"># JSONP</a>
-          
-        </div>
-      
 
       
       
@@ -388,8 +372,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/04/CSS%E4%B8%AD%E7%9A%84%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/" rel="next" title="CSS中的居中问题">
-                <i class="fa fa-chevron-left"></i> CSS中的居中问题
+              <a href="/2019/12/04/this%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%8E%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" rel="next" title="this关键字与箭头函数">
+                <i class="fa fa-chevron-left"></i> this关键字与箭头函数
               </a>
             
           </div>
@@ -398,8 +382,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/12/04/this%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%8E%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" rel="prev" title="this关键字与箭头函数">
-                this关键字与箭头函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/12/08/Vue-js%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" rel="prev" title="Vue.js响应式原理">
+                Vue.js响应式原理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -560,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-同源策略"><span class="nav-number">1.</span> <span class="nav-text">一.同源策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器为了保护隐私-规定："><span class="nav-number">1.1.</span> <span class="nav-text">浏览器为了保护隐私,规定：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-CORS"><span class="nav-number">2.</span> <span class="nav-text">二.CORS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-JSONP"><span class="nav-number">3.</span> <span class="nav-text">三.JSONP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sessionStorage"><span class="nav-number">1.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#localStorage"><span class="nav-number">2.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-两者的共同点"><span class="nav-number">3.</span> <span class="nav-text">一 两者的共同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-两者的不同点"><span class="nav-number">4.</span> <span class="nav-text">二 两者的不同点</span></a></li></ol></div>
             
 
           </div>
